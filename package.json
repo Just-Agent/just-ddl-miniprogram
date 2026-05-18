@@ -5,7 +5,7 @@
   "scripts": {
     "ci:preview": "node scripts/ci-upload.js preview",
     "ci:upload": "node scripts/ci-upload.js upload",
-    "check:audit": "python ../../wechat-miniprogram-skill/scripts/audit_miniprogram.py . --json-out audit-report.json",
-    "check:packages": "python ../../wechat-miniprogram-skill/scripts/analyze_subpackages.py . --json-out subpackage-report.json"
+    "check:audit": "python scripts/audit_miniprogram.py . --json-out audit-report.json",
+    "check:packages": "python scripts/analyze_subpackages.py . --json-out subpackage-report.json"
   }
 }
