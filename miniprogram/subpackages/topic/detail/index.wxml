@@ -1,0 +1,45 @@
+<view class="page safe-bottom detail">
+  <view wx:if="{{topic}}" class="topic-hero card" style="border-color: {{topic.color}}22;">
+    <view class="topic-hero__top">
+      <view>
+        <view class="topic-hero__eyebrow">{{topic.category}}</view>
+        <view class="topic-hero__title">{{topic.name}}</view>
+      </view>
+      <button class="topic-hero__star {{favoriteTopic ? 'is-active' : ''}}" bindtap="toggleTopic">{{favoriteTopic ? '★' : '☆'}}</button>
+    </view>
+    <view class="topic-hero__copy">{{topic.description}}</view>
+    <view class="topic-hero__stats">
+      <view><text>{{topic.itemCount}}</text><text>总计</text></view>
+      <view><text>{{topic.activeCount}}</text><text>活跃</text></view>
+      <view><text>{{groups.length}}</text><text>子专题</text></view>
+    </view>
+    <view class="topic-hero__actions">
+      <button bindtap="copyRepo">复制仓库</button>
+    </view>
+  </view>
+
+  <view class="controls card">
+    <view-mode-switch value="{{viewMode}}" bind:change="setViewMode" />
+    <visual-mode-switch value="{{visualMode}}" bind:change="setVisualMode" />
+  </view>
+
+  <view wx:if="{{groups.length}}" class="sections">
+    <subtopic-section
+      wx:for="{{groups}}"
+      wx:key="id"
+      group="{{item}}"
+      topic="{{topic}}"
+      pinned="{{item.pinned}}"
+      collapsed="{{item.collapsed}}"
+      view-mode="{{viewMode}}"
+      visual-mode="{{visualMode}}"
+      asset-base-url="{{assetBaseUrl}}"
+      bind:pin="togglePin"
+      bind:collapse="toggleCollapse"
+      bind:open="openEvent"
+      bind:togglefavorite="toggleEvent"
+      bind:source="copySource"
+    />
+  </view>
+  <empty-state wx:else title="专题暂无事件" description="等 Hub 下次同步后会自动补齐。" />
+</view>

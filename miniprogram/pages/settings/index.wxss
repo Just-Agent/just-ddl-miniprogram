@@ -1,0 +1,72 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.head__title {
+  color: #020617;
+  font-size: 50rpx;
+  font-weight: 900;
+}
+
+.head__copy,
+.section__body {
+  margin-top: 8rpx;
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 1.75;
+}
+
+.section {
+  padding: 28rpx;
+}
+
+.section__title {
+  color: #0f172a;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.section__row,
+.section__actions {
+  display: flex;
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.section__row button,
+.section__actions button,
+.privacy-btn {
+  border: 1rpx solid #dbe7f3;
+  border-radius: 22rpx;
+  padding: 18rpx 24rpx;
+  color: #0f172a;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.section__row button.is-active {
+  border-color: #99f6e4;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.kv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+  color: #475569;
+  font-size: 26rpx;
+}
+
+.kv text:last-child {
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.privacy-btn {
+  margin-top: 20rpx;
+  background: #0f766e;
+  color: #ffffff;
+}

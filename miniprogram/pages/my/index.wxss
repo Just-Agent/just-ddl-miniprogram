@@ -1,0 +1,80 @@
+.my,
+.groups,
+.group__items.is-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.head__title {
+  color: #020617;
+  font-size: 50rpx;
+  font-weight: 900;
+}
+
+.head__copy {
+  margin-top: 8rpx;
+  color: #64748b;
+  font-size: 26rpx;
+}
+
+.head__count {
+  border-radius: 999rpx;
+  padding: 12rpx 20rpx;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.controls {
+  padding: 20rpx;
+}
+
+.controls__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.controls__row + .controls__row {
+  margin-top: 16rpx;
+}
+
+.controls__chip {
+  border-radius: 999rpx;
+  padding: 14rpx 22rpx;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.controls__chip.is-active {
+  background: #dcfce7;
+  color: #047857;
+}
+
+.group__title {
+  margin-bottom: 16rpx;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.group__title text {
+  margin-left: 8rpx;
+  color: #64748b;
+  font-size: 22rpx;
+}
+
+.group__items.is-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20rpx;
+}

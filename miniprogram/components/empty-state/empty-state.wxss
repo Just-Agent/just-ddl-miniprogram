@@ -1,0 +1,42 @@
+.empty {
+  padding: 72rpx 32rpx;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 32rpx;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.empty__title {
+  margin-top: 24rpx;
+  color: #0f172a;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.empty__desc {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  line-height: 1.7;
+}
+
+.empty__action {
+  display: inline-flex;
+  margin-top: 28rpx;
+  border-radius: 22rpx;
+  padding: 18rpx 28rpx;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 26rpx;
+  font-weight: 900;
+}

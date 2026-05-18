@@ -1,0 +1,47 @@
+name: MiniProgram CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: preview or upload
+        required: true
+        default: preview
+      version:
+        description: upload version
+        required: false
+        default: 0.1.0
+  push:
+    branches: [main]
+    tags: ['v*']
+
+jobs:
+  miniprogram-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Audit mini program
+        run: |
+          npm run check:audit
+          npm run check:packages
+      - name: Install upload tool
+        run: npm install --no-save miniprogram-ci@1.8.18
+      - name: Prepare private key
+        run: |
+          printf "%s" "${{ secrets.WX_UPLOAD_PRIVATE_KEY }}" > private.key
+          chmod 600 private.key
+      - name: Preview or upload
+        env:
+          WX_APPID: ${{ secrets.WX_APPID }}
+          WX_UPLOAD_PRIVATE_KEY_PATH: private.key
+          WX_CLOUD_ENV: ${{ secrets.WX_CLOUD_ENV }}
+          ROBOT: ${{ vars.ROBOT || 1 }}
+          MINIPROGRAM_VERSION: ${{ inputs.version }}
+          MINIPROGRAM_DESC: Just-DDL ${{ github.sha }}
+        run: node scripts/ci-upload.js ${{ inputs.mode || 'preview' }}
+      - name: Cleanup private key
+        if: always()
+        run: rm -f private.key

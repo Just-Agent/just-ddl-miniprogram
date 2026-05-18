@@ -1,0 +1,28 @@
+<view class="subtopic card">
+  <view class="subtopic__head">
+    <view>
+      <view class="subtopic__title">{{group.name}} <text>{{group.items.length}} 条</text></view>
+      <view class="subtopic__next">下一条：{{group.nextTitle || '暂无'}}</view>
+    </view>
+    <view class="subtopic__actions">
+      <button class="subtopic__btn {{pinned ? 'is-active' : ''}}" catchtap="togglePin">{{pinned ? '已Pin' : 'Pin'}}</button>
+      <button class="subtopic__btn" catchtap="toggleCollapse">{{collapsed ? '展开' : '收起'}}</button>
+    </view>
+  </view>
+  <view wx:if="{{!collapsed}}" class="subtopic__items {{viewMode === 'grid' ? 'is-grid' : 'is-list'}}">
+    <ddl-card
+      wx:for="{{group.items}}"
+      wx:key="id"
+      item="{{item}}"
+      topic-color="{{topic.color}}"
+      topic-name="{{topic.name}}"
+      favorite="{{item.favorite}}"
+      view-mode="{{viewMode}}"
+      visual-mode="{{visualMode}}"
+      asset-base-url="{{assetBaseUrl}}"
+      bind:open="handleOpen"
+      bind:togglefavorite="handleFavorite"
+      bind:source="handleSource"
+    />
+  </view>
+</view>

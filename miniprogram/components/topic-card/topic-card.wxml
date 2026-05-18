@@ -1,0 +1,23 @@
+<view class="topic card" style="--topic-color: {{topic.color || '#0f766e'}}">
+  <view class="topic__top">
+    <view class="topic__icon" style="background: {{topic.color || '#0f766e'}}22; color: {{topic.color || '#0f766e'}};">{{initial}}</view>
+    <view class="topic__title">
+      <view class="topic__name">{{topic.name}}</view>
+      <view class="topic__repo">{{topic.repo}}</view>
+    </view>
+    <button class="topic__star {{favorite ? 'is-active' : ''}}" catchtap="handleFavorite">{{favorite ? '★' : '☆'}}</button>
+  </view>
+  <view class="topic__desc">{{topic.description}}</view>
+  <view class="topic__tags">
+    <text wx:for="{{topic.tags}}" wx:key="*this" class="topic__tag">{{item}}</text>
+  </view>
+  <view class="topic__stats">
+    <view class="topic__stat"><text>{{topic.activeCount || topic.itemCount || 0}}</text><text>活跃</text></view>
+    <view class="topic__stat"><text>{{topic.previewImages ? topic.previewImages.length : 0}}</text><text>缩略图</text></view>
+    <view class="topic__stat"><text>{{topic.itemCount || 0}}</text><text>总数</text></view>
+  </view>
+  <view class="topic__actions">
+    <button class="topic__enter" bindtap="handleOpen" style="background: {{topic.color || '#0f766e'}};">进入专题</button>
+    <button class="topic__repo-btn" catchtap="handleRepo">仓库</button>
+  </view>
+</view>

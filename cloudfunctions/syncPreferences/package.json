@@ -1,0 +1,7 @@
+{
+  "name": "syncPreferences",
+  "version": "0.1.0",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

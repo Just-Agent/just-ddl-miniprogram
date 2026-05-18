@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "主题广场",
+  "usingComponents": {
+    "topic-card": "../../components/topic-card/topic-card",
+    "empty-state": "../../components/empty-state/empty-state"
+  }
+}

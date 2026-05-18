@@ -1,0 +1,39 @@
+.calendar,
+.calendar__items {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.head__title {
+  color: #020617;
+  font-size: 50rpx;
+  font-weight: 900;
+}
+
+.head__copy {
+  margin-top: 8rpx;
+  color: #64748b;
+  font-size: 26rpx;
+}
+
+.period {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+  padding: 16rpx;
+}
+
+.period button {
+  border-radius: 22rpx;
+  padding: 20rpx;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.period button.is-active {
+  background: #e0f2fe;
+  color: #0284c7;
+}

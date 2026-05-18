@@ -1,0 +1,139 @@
+.topic {
+  padding: 28rpx;
+}
+
+.topic__top {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.topic__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 22rpx;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.topic__title {
+  flex: 1;
+  min-width: 0;
+}
+
+.topic__name {
+  overflow: hidden;
+  color: #0f172a;
+  font-size: 34rpx;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topic__repo {
+  margin-top: 6rpx;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 22rpx;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topic__star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64rpx;
+  height: 64rpx;
+  border: 1rpx solid #dbe7f3;
+  border-radius: 50%;
+  color: #94a3b8;
+  font-size: 34rpx;
+}
+
+.topic__star.is-active {
+  border-color: #fde68a;
+  background: #fef3c7;
+  color: #f59e0b;
+}
+
+.topic__desc {
+  margin-top: 22rpx;
+  color: #334155;
+  font-size: 26rpx;
+  line-height: 1.75;
+}
+
+.topic__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 22rpx;
+}
+
+.topic__tag {
+  border-radius: 999rpx;
+  padding: 8rpx 16rpx;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 22rpx;
+  font-weight: 800;
+}
+
+.topic__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+  margin-top: 24rpx;
+}
+
+.topic__stat {
+  border: 1rpx solid #dbe7f3;
+  border-radius: 22rpx;
+  padding: 18rpx;
+  background: #f8fafc;
+}
+
+.topic__stat text:first-child {
+  display: block;
+  color: #0f172a;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.topic__stat text:last-child {
+  display: block;
+  margin-top: 6rpx;
+  color: #64748b;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.topic__actions {
+  display: grid;
+  grid-template-columns: 1fr 120rpx;
+  gap: 14rpx;
+  margin-top: 26rpx;
+}
+
+.topic__enter,
+.topic__repo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  border-radius: 22rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.topic__repo-btn {
+  border: 1rpx solid #dbe7f3;
+  background: #ffffff;
+  color: #0f172a;
+}

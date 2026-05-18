@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "DDL 日历",
+  "usingComponents": {
+    "ddl-card": "../../components/ddl-card/ddl-card",
+    "empty-state": "../../components/empty-state/empty-state"
+  }
+}

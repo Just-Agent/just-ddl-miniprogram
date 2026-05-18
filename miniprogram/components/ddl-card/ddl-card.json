@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "countdown-pill": "../countdown-pill/countdown-pill",
+    "source-preview": "../source-preview/source-preview"
+  }
+}

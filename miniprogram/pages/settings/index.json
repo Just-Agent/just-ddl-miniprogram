@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设置",
+  "usingComponents": {
+    "privacy-guard": "../../components/privacy-guard/privacy-guard"
+  }
+}

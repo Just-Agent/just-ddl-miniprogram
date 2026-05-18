@@ -1,0 +1,36 @@
+<view class="ddl {{viewMode === 'grid' ? 'ddl--grid' : 'ddl--list'}} card" bindtap="handleOpen" style="border-color: {{topicColor}}22;">
+  <source-preview
+    wx:if="{{visualMode === 'vivid' && item.previewImage}}"
+    image="{{item.previewImage}}"
+    asset-base-url="{{assetBaseUrl}}"
+    label="{{item.source}}"
+    mode="{{sourceMode}}"
+    color="{{topicColor}}"
+    title="{{item.title}}"
+    bind:source="handleSource"
+  />
+  <view class="ddl__main">
+    <view class="ddl__meta">
+      <text wx:if="{{topicName}}" class="ddl__topic" style="color: {{topicColor}}; background: {{topicColor}}14;">{{topicName}}</text>
+      <text wx:if="{{item.stage}}" class="ddl__stage" style="color: {{topicColor}}; background: {{topicColor}}14;">{{item.stage}}</text>
+      <text class="ddl__date">{{dateText}}</text>
+    </view>
+    <view class="ddl__title">{{item.title}}</view>
+    <view wx:if="{{item.description}}" class="ddl__desc">{{item.description}}</view>
+    <view class="ddl__info">
+      <text>{{item.location || 'Online'}}</text>
+      <text>{{item.dateRange}}</text>
+      <text>{{item.source}}</text>
+    </view>
+    <view class="ddl__tags">
+      <text wx:for="{{item.tags}}" wx:key="*this" class="ddl__tag">{{item}}</text>
+    </view>
+  </view>
+  <view class="ddl__side">
+    <countdown-pill deadline="{{item.deadline}}" vivid="{{visualMode === 'vivid' && viewMode === 'grid'}}" />
+    <view class="ddl__actions">
+      <button class="ddl__icon {{favorite ? 'is-active' : ''}}" catchtap="handleFavorite">{{favorite ? '★' : '☆'}}</button>
+      <button class="ddl__icon" catchtap="handleSource">↗</button>
+    </view>
+  </view>
+</view>

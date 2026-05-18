@@ -1,0 +1,4 @@
+<view class="switch">
+  <button class="switch__item {{value === 'vivid' ? 'is-active' : ''}}" data-value="vivid" bindtap="choose">Vivid</button>
+  <button class="switch__item {{value === 'simple' ? 'is-active' : ''}}" data-value="simple" bindtap="choose">Simple</button>
+</view>

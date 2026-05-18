@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的DDL",
+  "usingComponents": {
+    "ddl-card": "../../components/ddl-card/ddl-card",
+    "view-mode-switch": "../../components/view-mode-switch/view-mode-switch",
+    "visual-mode-switch": "../../components/visual-mode-switch/visual-mode-switch",
+    "empty-state": "../../components/empty-state/empty-state"
+  }
+}

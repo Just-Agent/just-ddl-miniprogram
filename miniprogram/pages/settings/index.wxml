@@ -1,0 +1,40 @@
+<view class="page safe-bottom settings">
+  <view class="head">
+    <view class="head__title">设置</view>
+    <view class="head__copy">Just-DDL 小程序版默认中文浏览，英文界面可手动切换。</view>
+  </view>
+
+  <view class="card section">
+    <view class="section__title">语言</view>
+    <view class="section__row">
+      <button class="{{language === 'zh' ? 'is-active' : ''}}" data-value="zh" bindtap="switchLanguage">中文</button>
+      <button class="{{language === 'en' ? 'is-active' : ''}}" data-value="en" bindtap="switchLanguage">English</button>
+    </view>
+  </view>
+
+  <view class="card section">
+    <view class="section__title">数据版本</view>
+    <view class="kv"><text>版本</text><text>{{manifest.dataVersion || '未知'}}</text></view>
+    <view class="kv"><text>专题</text><text>{{manifest.topicsCount || 0}}</text></view>
+    <view class="kv"><text>条目</text><text>{{manifest.itemsCount || 0}}</text></view>
+    <view class="kv"><text>缓存</text><text>{{cacheUpdatedAt}}</text></view>
+    <view class="section__actions">
+      <button bindtap="refresh">刷新数据</button>
+      <button bindtap="clearCache">清理缓存</button>
+    </view>
+  </view>
+
+  <view class="card section">
+    <view class="section__title">联邦式多仓库网络</view>
+    <view class="section__body">子专题仓库负责 crawler、validator、link-check 和 Pages；Hub 负责聚合；小程序只消费统一数据出口。</view>
+    <view class="section__body muted">微信正式版建议把 JSON 与缩略图同步到腾讯云 COS 或 CloudBase 静态托管域名。</view>
+  </view>
+
+  <view class="card section">
+    <view class="section__title">隐私与提醒</view>
+    <view class="section__body">首版不强制登录，不采集手机号、头像、位置。订阅提醒、云端同步和跨设备收藏属于二期能力。</view>
+    <button class="privacy-btn" bindtap="showPrivacy">查看隐私说明</button>
+  </view>
+
+  <privacy-guard visible="{{privacyVisible}}" bind:close="hidePrivacy" />
+</view>

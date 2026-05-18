@@ -1,0 +1,28 @@
+<view class="page safe-bottom calendar">
+  <view class="head">
+    <view class="head__title">全部截止日</view>
+    <view class="head__copy">按截止时间升序排列，适合快速扫近期事件。</view>
+  </view>
+  <view class="period card">
+    <button class="{{period === 7 ? 'is-active' : ''}}" data-value="7" bindtap="setPeriod">7 天</button>
+    <button class="{{period === 30 ? 'is-active' : ''}}" data-value="30" bindtap="setPeriod">30 天</button>
+    <button class="{{period === 90 ? 'is-active' : ''}}" data-value="90" bindtap="setPeriod">90 天</button>
+  </view>
+  <view wx:if="{{items.length}}" class="calendar__items">
+    <ddl-card
+      wx:for="{{items}}"
+      wx:key="id"
+      item="{{item}}"
+      topic-color="{{item.topicColor}}"
+      topic-name="{{item.topicName}}"
+      favorite="{{item.favorite}}"
+      view-mode="list"
+      visual-mode="simple"
+      asset-base-url="{{assetBaseUrl}}"
+      bind:open="openEvent"
+      bind:togglefavorite="toggleEvent"
+      bind:source="copySource"
+    />
+  </view>
+  <empty-state wx:else title="近期没有截止日" description="可以切换到 90 天，或去主题广场收藏更多专题。" />
+</view>

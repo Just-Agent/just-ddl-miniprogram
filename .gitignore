@@ -1,0 +1,12 @@
+node_modules/
+miniprogram_npm/
+dist/
+coverage/
+.env
+*.key
+*.pem
+*.p12
+private.*
+project.private.config.json
+audit-report.json
+subpackage-report.json

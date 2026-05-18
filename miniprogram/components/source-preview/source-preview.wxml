@@ -1,0 +1,13 @@
+<view class="source" bindtap="handleOpen">
+  <image wx:if="{{imageUrl}}" class="source__img" mode="aspectFill" src="{{imageUrl}}" />
+  <view wx:else class="source__fallback" style="background: {{color}};">
+    <text>{{label}}</text>
+    <text>{{title}}</text>
+  </view>
+  <view class="source__shade"></view>
+  <view class="source__meta">
+    <text class="source__mode">{{mode}}</text>
+    <text class="source__label">{{label}}</text>
+  </view>
+  <view class="source__open" style="color: {{color}};">↗</view>
+</view>

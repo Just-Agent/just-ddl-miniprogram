@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/plaza/index",
+    "pages/my/index",
+    "pages/calendar/index",
+    "pages/settings/index"
+  ],
+  "subpackages": [
+    {
+      "root": "subpackages/topic",
+      "pages": [
+        "detail/index",
+        "event/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/plaza/index": {
+      "network": "wifi",
+      "packages": [
+        "subpackages/topic"
+      ]
+    }
+  },
+  "tabBar": {
+    "color": "#64748b",
+    "selectedColor": "#0f766e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/plaza/index", "text": "主题广场" },
+      { "pagePath": "pages/my/index", "text": "我的DDL" },
+      { "pagePath": "pages/calendar/index", "text": "日历" },
+      { "pagePath": "pages/settings/index", "text": "设置" }
+    ]
+  },
+  "window": {
+    "navigationBarTitleText": "Just-DDL",
+    "navigationBarBackgroundColor": "#f8fafc",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8fafc"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,51 @@
+<view class="page safe-bottom my">
+  <view class="head">
+    <view>
+      <view class="head__title">我的DDL</view>
+      <view class="head__copy">收藏专题或单个事件后，会汇总到这里。</view>
+    </view>
+    <view class="head__count">{{items.length}} 条</view>
+  </view>
+
+  <view class="controls card">
+    <view class="controls__row">
+      <button class="controls__chip {{organizeMode === 'topic' ? 'is-active' : ''}}" data-value="topic" bindtap="setOrganize">按专题</button>
+      <button class="controls__chip {{organizeMode === 'time' ? 'is-active' : ''}}" data-value="time" bindtap="setOrganize">按时间</button>
+      <button class="controls__chip {{organizeMode === 'name' ? 'is-active' : ''}}" data-value="name" bindtap="setOrganize">按名称</button>
+    </view>
+    <view class="controls__row">
+      <view-mode-switch value="{{viewMode}}" bind:change="setViewMode" />
+      <visual-mode-switch value="{{visualMode}}" bind:change="setVisualMode" />
+    </view>
+  </view>
+
+  <view wx:if="{{groups.length}}" class="groups">
+    <view wx:for="{{groups}}" wx:key="id" class="group">
+      <view class="group__title" style="color: {{item.color}};">{{item.name}} <text>{{item.items.length}} 条</text></view>
+      <view class="group__items {{viewMode === 'grid' ? 'is-grid' : 'is-list'}}">
+        <ddl-card
+          wx:for="{{item.items}}"
+          wx:for-item="ddl"
+          wx:key="id"
+          item="{{ddl}}"
+          topic-color="{{item.color}}"
+          topic-name="{{item.name}}"
+          favorite="{{ddl.favorite}}"
+          view-mode="{{viewMode}}"
+          visual-mode="{{visualMode}}"
+          asset-base-url="{{assetBaseUrl}}"
+          bind:open="openEvent"
+          bind:togglefavorite="toggleEvent"
+          bind:source="copySource"
+        />
+      </view>
+    </view>
+  </view>
+  <empty-state
+    wx:else
+    title="{{loading ? '正在加载我的DDL' : '还没有收藏'}}"
+    description="在主题广场收藏一个专题，或进入专题收藏具体事件。"
+    action="去主题广场"
+    bind:action="goPlaza"
+  />
+</view>

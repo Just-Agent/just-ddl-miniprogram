@@ -1,0 +1,31 @@
+<view class="page safe-bottom event">
+  <view wx:if="{{item}}" class="event__hero card">
+    <source-preview
+      wx:if="{{item.previewImage}}"
+      image="{{item.previewImage}}"
+      asset-base-url="{{assetBaseUrl}}"
+      label="{{item.source}}"
+      mode="官方来源"
+      color="{{topic.color}}"
+      title="{{item.title}}"
+      bind:source="copySource"
+    />
+    <view class="event__meta">
+      <text style="background: {{topic.color}}14; color: {{topic.color}};">{{topic.name}}</text>
+      <text wx:if="{{item.stage}}" style="background: {{topic.color}}14; color: {{topic.color}};">{{item.stage}}</text>
+    </view>
+    <view class="event__title">{{item.title}}</view>
+    <countdown-pill deadline="{{item.deadline}}" vivid="{{true}}" />
+    <view class="event__desc">{{item.description}}</view>
+    <view class="event__kv"><text>日期</text><text>{{item.dateRange}}</text></view>
+    <view class="event__kv"><text>地点</text><text>{{item.location}}</text></view>
+    <view class="event__kv"><text>来源</text><text>{{item.source}}</text></view>
+    <view class="event__tags">
+      <text wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="event__actions">
+      <button class="event__primary" bindtap="copySource">复制官方链接</button>
+      <button class="event__ghost {{favorite ? 'is-active' : ''}}" bindtap="toggleFavorite">{{favorite ? '已收藏' : '收藏'}}</button>
+    </view>
+  </view>
+</view>

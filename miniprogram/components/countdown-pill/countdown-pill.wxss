@@ -1,0 +1,46 @@
+.countdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rpx;
+  padding: 10rpx 18rpx;
+  background: #dcfce7;
+  color: #047857;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.countdown.is-ended {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+}
+
+.countdown-grid__unit {
+  min-width: 128rpx;
+  border: 1rpx solid #dbe7f3;
+  border-radius: 22rpx;
+  padding: 18rpx;
+  background: #f8fafc;
+}
+
+.countdown-grid__unit text:first-child {
+  display: block;
+  color: #020617;
+  font-size: 40rpx;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.countdown-grid__unit text:last-child {
+  display: block;
+  margin-top: 8rpx;
+  color: #475569;
+  font-size: 22rpx;
+  font-weight: 800;
+}

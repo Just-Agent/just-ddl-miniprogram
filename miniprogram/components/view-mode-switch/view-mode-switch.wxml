@@ -1,0 +1,4 @@
+<view class="switch">
+  <button class="switch__item {{value === 'list' ? 'is-active' : ''}}" data-value="list" bindtap="choose">长卡列表</button>
+  <button class="switch__item {{value === 'grid' ? 'is-active' : ''}}" data-value="grid" bindtap="choose">多列卡片</button>
+</view>

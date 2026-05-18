@@ -1,0 +1,19 @@
+.switch {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1rpx solid #fed7aa;
+  border-radius: 999rpx;
+  background: #ffffff;
+}
+
+.switch__item {
+  padding: 14rpx 22rpx;
+  color: #64748b;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.switch__item.is-active {
+  background: #ffedd5;
+  color: #f97316;
+}

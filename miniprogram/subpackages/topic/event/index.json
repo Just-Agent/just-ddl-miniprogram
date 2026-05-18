@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "DDL 详情",
+  "usingComponents": {
+    "countdown-pill": "../../../components/countdown-pill/countdown-pill",
+    "source-preview": "../../../components/source-preview/source-preview"
+  }
+}

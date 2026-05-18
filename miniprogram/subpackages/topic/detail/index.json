@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "专题详情",
+  "usingComponents": {
+    "view-mode-switch": "../../../components/view-mode-switch/view-mode-switch",
+    "visual-mode-switch": "../../../components/visual-mode-switch/visual-mode-switch",
+    "subtopic-section": "../../../components/subtopic-section/subtopic-section",
+    "ddl-card": "../../../components/ddl-card/ddl-card",
+    "empty-state": "../../../components/empty-state/empty-state"
+  }
+}

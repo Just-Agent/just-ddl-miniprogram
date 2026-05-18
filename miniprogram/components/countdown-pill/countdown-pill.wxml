@@ -1,0 +1,7 @@
+<view wx:if="{{countdown.ended}}" class="countdown is-ended">已结束</view>
+<view wx:elif="{{vivid}}" class="countdown-grid">
+  <view class="countdown-grid__unit"><text>{{countdown.days}}</text><text>天</text></view>
+  <view class="countdown-grid__unit"><text>{{countdown.hours}}</text><text>小时</text></view>
+  <view class="countdown-grid__unit"><text>{{countdown.minutes}}</text><text>分钟</text></view>
+</view>
+<view wx:else class="countdown mono">{{countdown.days}}d {{countdown.hours}}h {{countdown.minutes}}m</view>

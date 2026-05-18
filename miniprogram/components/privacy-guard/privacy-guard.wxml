@@ -1,0 +1,10 @@
+<view wx:if="{{visible}}" class="privacy">
+  <view class="privacy__panel">
+    <view class="privacy__title">隐私说明</view>
+    <view class="privacy__body">Just-DDL 首版不强制登录，不采集头像、手机号或位置。收藏与展示偏好默认保存在本机。</view>
+    <view class="privacy__actions">
+      <button class="privacy__link" bindtap="openPrivacy">查看微信隐私协议</button>
+      <button class="privacy__ok" bindtap="close">知道了</button>
+    </view>
+  </view>
+</view>
